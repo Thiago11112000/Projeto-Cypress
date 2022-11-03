@@ -20,4 +20,5 @@ jobs:
           browser: chrome
           record: true
           group: 'UI - Chrome'
+          config-file: cypress.config.js 
           spec:  cypress/e2e/*
