@@ -20,4 +20,4 @@ jobs:
           browser: chrome
           record: true
           group: 'UI - Chrome'
-          spec: cypress/integration/*
+          spec:  cypress/e2e/*
