@@ -1,24 +1,13 @@
-name: Cypress Regression Tests
-
+name: Cypress tests
 on: [push]
-
 jobs:
-
-  ui-chrome-tests:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node14.17.0-chrome88-ff89
-    strategy:
-      fail-fast: false
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      
-      - name: 'UI Tests - Chrome'
-        uses: cypress-io/github-action@v4.1.0
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
         with:
-          install-command: yarn install
-          browser: chrome
-          record: true
-          group: 'UI - Chrome'
-          config-file: cypress.config.js 
-          spec:  cypress/e2e/*
+          project: ./e2e/ALURAPIC/integration
