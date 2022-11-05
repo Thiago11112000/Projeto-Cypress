@@ -12,3 +12,6 @@ jobs:
         with:
           config-file: cypress.config.js
           record: true
+          
+        env:
+          CYPRESS_RECORD_KEY: ${{ 1os7of}}
